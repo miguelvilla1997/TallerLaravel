@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\filesController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 /*
@@ -12,7 +13,12 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::prefix('archivos')->group(function(){
+
+//Route::get('/archivos', [filesController::class,'index']);
+
+Route::get('/archivos','filesController@index')->name('archivos.index');
+Route::post('/archivos','filesController@store');
+/*Route::prefix('archivos')->group(function(){
     Route::get('create', function () {
        
     });
@@ -28,4 +34,4 @@ Route::get('/home', function () {
 });
 Route::delete('/datos', function (Request $request){
     return $request->all();
-});
+});*/

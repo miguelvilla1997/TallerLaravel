@@ -7,11 +7,13 @@
         <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
-        <form action="{{url('/datos')}}" method="POST">
+        <h1>{{'hola'}}</h1>
+        <form action="{{url('/archivos')}}" method="POST" enctype="multipart/form-data">
             @csrf
-            @method('DELETE')
-            <label for="">Nombre:</label>
-            <input type="text" name="nombre">
+            <label for="">Nombre:</label><br>
+            <input type="text" name="nombre"><br>
+            <label for="">Archivo:</label><br>
+            <input type="file" name="archivo"><br>
             <button type="submit">Enviar</button>
         </form>
     </body>
